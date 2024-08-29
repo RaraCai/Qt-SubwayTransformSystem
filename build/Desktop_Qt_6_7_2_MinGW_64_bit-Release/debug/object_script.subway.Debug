@@ -1,0 +1,15 @@
+debug/graph.o
+debug/line.o
+debug/main.o
+debug/station.o
+debug/window_intro.o
+debug/window_main.o
+debug/window_updatelines.o
+debug/zoomio.o
+debug/qrc_data.o
+debug/qrc_icon.o
+debug/qrc_qmake_qmake_qm_files.o
+debug/moc_myGUIstyle.o
+debug/moc_window_intro.o
+debug/moc_window_main.o
+debug/moc_window_updatelines.o

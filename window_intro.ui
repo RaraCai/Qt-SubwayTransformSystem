@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>window_intro</class>
+ <widget class="QWidget" name="window_intro">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>716</width>
+    <height>760</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:transparent;
+
+
+</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>-40</x>
+     <y>0</y>
+     <width>441</width>
+     <height>760</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <stylestrategy>PreferAntialias</stylestrategy>
+     <fontweight>Thin</fontweight>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame#frame{
+border-image:url(&quot;:/icon/icon/profile.png&quot;);
+background:transparent;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="backButton">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>380</y>
+      <width>31</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color:transparent;
+border:none;
+icon:url(&quot;:/icon/icon/icon_back_normal.png&quot;);
+icon-size:20px 20px;
+}
+QPushButton:hover{
+
+icon:url(&quot;:/icon/icon/icon_back_pressed.png&quot;);
+icon-size:20px 20px;
+}
+QPushButton:pressed{
+icon:url(&quot;:/icon/icon/icon_back_pressed.png&quot;);
+icon-size:20px 20px;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

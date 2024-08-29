@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>icon/icon_downArrow_white.png</file>
+        <file>icon/sidebar.png</file>
+        <file>icon/view.png</file>
+        <file>icon/icon_update_normal.png</file>
+        <file>icon/icon_update_pressed.png</file>
+        <file>icon/icon_update_disable.png</file>
+        <file>icon/icon_map_disable.png</file>
+        <file>icon/icon_map_normal.png</file>
+        <file>icon/icon_map_pressed.png</file>
+        <file>icon/icon_title.png</file>
+        <file>icon/icon_zoomin_normal.png</file>
+        <file>icon/icon_zoomin_pressed.png</file>
+        <file>icon/icon_zoomout_normal.png</file>
+        <file>icon/icon_zoomout_pressed.png</file>
+        <file>icon/icon_singleline_disable.png</file>
+        <file>icon/icon_singleline_normal.png</file>
+        <file>icon/icon_singleline_pressed.png</file>
+        <file>icon/icon_back_normal.png</file>
+        <file>icon/icon_back_pressed.png</file>
+        <file>icon/icon_more_normal.png</file>
+        <file>icon/icon_more_pressed.png</file>
+        <file>icon/profile.png</file>
+        <file>icon/app_icon.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SubwayTransfer</class>
+ <widget class="QWidget" name="SubwayTransfer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>760</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Small Fonts</family>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>SubwayTransfer</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidge{
+	background-color: rgb(255,255,255);
+	border:1px solid #cccccc;
+}</string>
+  </property>
+  <widget class="QFrame" name="sidebar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>70</y>
+     <width>330</width>
+     <height>690</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame#sidebar{
+	background-color: white;
+    padding: 5px; /* 内边距 */
+	border-image:url(&quot;:/icon/icon/sidebar.png&quot;);
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <widget class="QComboBox" name="startLine_cbox">
+    <property name="geometry">
+     <rect>
+      <x>75</x>
+      <y>90</y>
+      <width>101</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 9pt &quot;华文中宋&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="startStation_cbox">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>90</y>
+      <width>111</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 9pt &quot;华文中宋&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="endLine_cbox">
+    <property name="geometry">
+     <rect>
+      <x>75</x>
+      <y>135</y>
+      <width>101</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 9pt &quot;华文中宋&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="endStation_cbox">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>135</y>
+      <width>111</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 9pt &quot;华文中宋&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="from_label">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>60</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabal#from_lable{
+color:#ffcc33;
+}</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#b3a2c7;&quot;&gt;from&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="to_label">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>110</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabal#from_lable{
+color:#ffcc33;
+}</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#b3a2c7;&quot;&gt;to&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fromto_title">
+    <property name="geometry">
+     <rect>
+      <x>75</x>
+      <y>38</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt;Where do you want to go?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>240</y>
+      <width>211</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QRadioButton" name="fastest_radio">
+       <property name="styleSheet">
+        <string notr="true">QRadioButton
+{
+	font: 75 10pt &quot;华文中宋&quot;;
+	background: transparent;
+	color:#2F3849;
+	border: none;
+}
+
+QRadioButton:disabled
+{	
+	color: #cccccc;
+}
+
+QRadioButton::indicator 
+{
+    width: 10px;
+    height: 10px;
+    border-radius: 7px;
+}
+ 
+QRadioButton::indicator:checked 
+{
+	width: 12px;
+    height: 12px;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 #ffcc33, stop:0.6 #ffcc33,stop:0.65 rgba(255, 255, 255, 255), stop:0.8 rgba(255, 255, 255, 255), stop:0.85#ffcc33, stop:1 #ffcc33);
+    border: 1px solid #ffcc33;
+	border-radius: 7px;
+}
+ 
+QRadioButton::indicator:unchecked 
+{
+    background-color: white;
+    border: 2px solid #cccccc;
+	color:#cccccc;
+}
+
+QRadioButton::indicator:unchecked:disabled
+{
+    background-color: #cccccc;
+    border: 2px solid  rgb(200, 200, 200);
+	color:#cccccc;
+}
+
+QRadioButton::indicator:checked:disabled 
+{
+	width: 12px;
+    height: 12px;
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 gray, stop:0.6 gray,stop:0.65 white, stop:0.8 white, stop:0.85 gray, stop:1 gray);
+    border: 1px solid #cccccc;
+	border-radius: 7px;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>速度最快</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="trans_radio">
+       <property name="styleSheet">
+        <string notr="true">QRadioButton
+{
+	font: 75 10pt &quot;华文中宋&quot;;
+	background: transparent;
+	color:#2F3849;
+	border: none;
+}
+
+QRadioButton:disabled
+{	
+	color: #cccccc;
+}
+
+QRadioButton::indicator 
+{
+    width: 10px;
+    height: 10px;
+    border-radius: 7px;
+}
+ 
+QRadioButton::indicator:checked 
+{
+	width: 12px;
+    height: 12px;
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 #ffcc33, stop:0.6 #ffcc33,stop:0.65 rgba(255, 255, 255, 255), stop:0.8 rgba(255, 255, 255, 255), stop:0.85#ffcc33, stop:1 #ffcc33);
+    border: 1px solid #ffcc33;
+	border-radius: 7px;
+}
+ 
+QRadioButton::indicator:unchecked 
+{
+    background-color: white;
+    border: 2px solid #cccccc;
+	color:#cccccc;
+}
+
+QRadioButton::indicator:unchecked:disabled
+{
+    background-color: #cccccc;
+    border: 2px solid  rgb(200, 200, 200);
+	color:#cccccc;
+}
+
+QRadioButton::indicator:checked:disabled 
+{
+	width: 12px;
+    height: 12px;
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 gray, stop:0.6 gray,stop:0.65 white, stop:0.8 white, stop:0.85 gray, stop:1 gray);
+    border: 1px solid #cccccc;
+	border-radius: 7px;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>换乘最少</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="strategy_title">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>205</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>13</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
+      <kerning>true</kerning>
+      <fontweight>ExtraBold</fontweight>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;选择换乘策略&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="strategy_title_sub">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>225</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>11</pointsize>
+      <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; color:#adadad;&quot;&gt;Choose your transfer plan&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>285</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border-radius:15px;
+	background-color:white;
+	border: 2px solid #cccccc;
+	color:#cccccc;
+	font: 75 10px &quot;Arial Black&quot;;
+}
+QPushButton:hover{
+	background-color:white;
+	border: 2px solid #603be6;
+	color:#603BE6;
+}
+QPushButton:pressed{
+	color:#cccccc;
+	background-color:#41289C;
+	border-color:#41289c;
+}</string>
+    </property>
+    <property name="text">
+     <string>OK</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="answer_title">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>320</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>13</pointsize>
+      <stylestrategy>PreferAntialias</stylestrategy>
+      <kerning>true</kerning>
+      <fontweight>ExtraBold</fontweight>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;推荐搭乘方案&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="answer_title_sub">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>340</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>11</pointsize>
+      <bold>true</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; color:#adadad;&quot;&gt;Routine recommended is shown below&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="infobar">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>370</y>
+      <width>290</width>
+      <height>300</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px groove #cccccc;
+border-radius:10px;
+background-color:white;</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="titlebar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QFrame#titlebar{
+	background-color:white;
+	border:none;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="exitButton">
+    <property name="geometry">
+     <rect>
+      <x>1170</x>
+      <y>20</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#exitButton {
+    background-color: white; /* 初始背景色为白色 */
+    border: 1px solid #cccccc; /* 边框颜色 */
+    border-radius: 15px; /* 边框圆角 */
+    color: #cccccc; /* 文本颜色 */
+    padding: 5px; /* 内边距 */
+    font-size: 12px; /* 文本大小 */
+}
+
+QPushButton#exitButton:hover {
+    background-color: white; /* 鼠标悬停时的背景色 */
+	color:#ffcc33;
+	border-color:#ffcc33;
+}
+
+QPushButton#exitButton:pressed {
+    background-color: #E6B82E; /* 按钮被按下时的背景色 */
+	color:#cccccc;
+	border-color:#E6B82E;
+}</string>
+    </property>
+    <property name="text">
+     <string>退出</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>0</y>
+      <width>160</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLabel" name="title">
+       <property name="font">
+        <font>
+         <family>Arial Black</family>
+         <pointsize>12</pointsize>
+         <italic>false</italic>
+         <fontweight>Black</fontweight>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel#title{
+	color:#2F3849;
+	font: 900 12pt &quot;Arial Black&quot;;
+}</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;MetroMate&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="updatelinesButton">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>20</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	icon: url(&quot;:/icon/icon/icon_update_disable.png&quot;);
+   
+    background-color: white; /* 初始背景色为白色 */
+    border: 2px solid  #603be6; /* 边框颜色 */
+    border-radius: 15px; /* 边框圆角 */
+    color:  #603be6; /* 文本颜色 */
+    padding: 5px; /* 内边距 */
+    font-size: 12px; /* 文本大小 */
+}
+
+
+QPushButton:hover {
+	icon: url(&quot;:/icon/icon/icon_update_normal.png&quot;);
+   
+    background-color:  #603be6; /* 鼠标悬停时的背景色 */
+	color:white;
+	border-color: #603be6;
+}
+
+QPushButton:pressed {
+	icon: url(&quot;:/icon/icon/icon_update_pressed.png&quot;);
+    
+    background-color: #41289C; /* 按钮被按下时的背景色 */
+	color:#cccccc;
+	border-color:#41289C;
+}</string>
+    </property>
+    <property name="text">
+     <string>线路管理</string>
+    </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="mapButton">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>20</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	icon: url(&quot;:/icon/icon/icon_map_disable.png&quot;);
+   
+    background-color: white; /* 初始背景色为白色 */
+    border: 2px solid  #603be6; /* 边框颜色 */
+    border-radius: 15px; /* 边框圆角 */
+    color:  #603be6; /* 文本颜色 */
+    padding: 5px; /* 内边距 */
+    font-size: 12px; /* 文本大小 */
+}
+
+
+QPushButton:hover {
+	icon: url(&quot;:/icon/icon/icon_map_normal.png&quot;);
+   
+    background-color:  #603be6; /* 鼠标悬停时的背景色 */
+	color:white;
+	border-color: #603be6;
+}
+
+QPushButton:pressed {
+	icon: url(&quot;:/icon/icon/icon_map_pressed.png&quot;);
+    
+    background-color: #41289C; /* 按钮被按下时的背景色 */
+	color:#cccccc;
+	border-color:#41289C;
+}</string>
+    </property>
+    <property name="text">
+     <string>全部线路</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="singleButton">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>20</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	icon: url(&quot;:/icon/icon/icon_singleline_disable.png&quot;);
+   
+    background-color: white; /* 初始背景色为白色 */
+    border: 2px solid  #603be6; /* 边框颜色 */
+    border-radius: 15px; /* 边框圆角 */
+    color:  #603be6; /* 文本颜色 */
+    padding: 5px; /* 内边距 */
+    font-size: 12px; /* 文本大小 */
+}
+
+
+QPushButton:hover {
+	icon: url(&quot;:/icon/icon/icon_singleline_normal.png&quot;);
+   
+    background-color:  #603be6; /* 鼠标悬停时的背景色 */
+	color:white;
+	border-color: #603be6;
+}
+
+QPushButton:pressed {
+	icon: url(&quot;:/icon/icon/icon_singleline_pressed.png&quot;);
+    
+    background-color: #41289C; /* 按钮被按下时的背景色 */
+	color:#cccccc;
+	border-color:#41289C;
+}</string>
+    </property>
+    <property name="text">
+     <string>查看单线</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="lines_cbox">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>20</y>
+      <width>420</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QComboBox{
+	border:1px solid #cccccc;
+	border-radius:15px;
+	padding-left:5px;
+	font:9pt &quot;华文中宋&quot;;
+}
+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="profileButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color:transparent;
+border:none;
+icon:url(&quot;:/icon/icon/icon_more_normal.png&quot;);
+icon-size:20px 20px;
+}
+QPushButton:hover{
+icon:url(&quot;:/icon/icon/icon_more_pressed.png&quot;);
+icon-size:20px 20px;
+}
+QPushButton:pressed{
+icon:url(&quot;:/icon/icon/icon_more_pressed.png&quot;);
+icon-size:20px 20px;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>exitButton</zorder>
+   <zorder>verticalLayoutWidget_2</zorder>
+   <zorder>updatelinesButton</zorder>
+   <zorder>mapButton</zorder>
+   <zorder>lines_cbox</zorder>
+   <zorder>singleButton</zorder>
+   <zorder>profileButton</zorder>
+  </widget>
+  <widget class="QGraphicsView" name="graphicsView">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>70</y>
+     <width>950</width>
+     <height>690</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:none;
+background-color:rgb(240, 240, 240);</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="zoomin_button">
+   <property name="geometry">
+    <rect>
+     <x>1160</x>
+     <y>700</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color:white;
+	border:1px solid #cccccc;
+	border-radius:15px;
+	icon:url(&quot;:/icon/icon/icon_zoomin_normal.png&quot;);
+	icon-size:24px 24px;
+}
+QPushButton:hover{
+	border:1px solid #ffcc33;
+	icon:url(&quot;:/icon/icon/icon_zoomin_pressed.png&quot;);
+	icon-size:24px 24px;
+}
+QPushButton:pressed{
+	border:1px solid #ffcc33;
+	icon:url(&quot;:/icon/icon/icon_zoomin_pressed.png&quot;);
+	icon-size:24px 24px;
+	background-color:#FFF7E0;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="zoomout_button">
+   <property name="geometry">
+    <rect>
+     <x>1210</x>
+     <y>700</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color:white;
+	border:1px solid #cccccc;
+	border-radius:15px;
+	icon:url(&quot;:/icon/icon/icon_zoomout_normal.png&quot;);
+	icon-size:24px 24px;
+}
+QPushButton:hover{
+	border:1px solid #ffcc33;
+	icon:url(&quot;:/icon/icon/icon_zoomout_pressed.png&quot;);
+	icon-size:24px 24px;
+}
+QPushButton:pressed{
+	border:1px solid #ffcc33;
+	icon:url(&quot;:/icon/icon/icon_zoomout_pressed.png&quot;);
+	icon-size:24px 24px;
+	background-color:#FFF7E0;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>exitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SubwayTransfer</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1035</x>
+     <y>36</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>539</x>
+     <y>360</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
